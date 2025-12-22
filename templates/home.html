@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox from Nowhere </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="mood-{{ msg.tone if not exhausted else 'empty' }}">
+
+<main class="container">
+
+    <section class="current">
+        {% if exhausted %}
+            <p class="empty-text"> {{ msg }} </p>
+        {% else %}
+            <p class="message">
+                {{ msg.text }}
+            </p>
+
+            <div class="actions">
+                <a href="/act/open/{{ msg.id }}">open</a>
+                <a href="/act/archive/{{ msg.id }}">archive</a>
+                <a href="/act/ignore/{{ msg.id }}">ignore</a>
+            </div>
+        {% endif %}
+    </section>
+
+    {% if archived %}
+    <aside class="archive">
+        <h4>archive</h4>
+        {% for a in archived %}
+            <p class="archived-msg">{{ a.message.text }}</p>
+        {% endfor %}
+    </aside>
+    {% endif %}
+
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const archiveSection = document.querySelector('.archive');
+    
+    if (archiveSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('scroll-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        observer.observe(archiveSection);
+    }
+});
+</script>
+
+</body>
+</html>
