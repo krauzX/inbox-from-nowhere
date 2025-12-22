@@ -40,7 +40,7 @@ def routes(app):
         
         user = User.query.get(session["userID"]) #get = finds objects based on primary key
         msg = pickMessage(user)
-        if not msg: return render_template ("home.html", msg = "Nothing's left for you.", archived = user.archives, exhuasted = True)
+        if not msg: return render_template ("home.html", msg = "Nothing's left for you.", archived = user.archived.all(), exhuasted = True)
         return render_template("home.html", msg = msg, archived = user.archived.all(), exhuasted = False)
 
 
