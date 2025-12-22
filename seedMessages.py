@@ -71,18 +71,3 @@ messages = [
     {"text": "There’s nothing left to add.", "tone": "resigned", "weight": 11},
     {"text": "I’ll let this rest.", "tone": "resigned", "weight": 15},
 ]
-
-
-from __init__ import createApp
-from models import db, Messages
-
-app = createApp()
-
-with app.app_context():
-    db.create_all() #creates messages table, sqlalchemy dont do shi 
-    for i, message in enumerate(messages, start=1):
-        db.session.add(Messages(id = i, **message)) #give it as instance of your table, and not simple values, it doesnt know where to add!
-    db.session.commit()
-
-
-#run it only once!

@@ -1,6 +1,7 @@
 from flask import Flask
 from routes import routes
 from models import *
+from seedMessages import messages
 import os
 
 def createApp():
@@ -24,5 +25,11 @@ def createApp():
 
     with app.app_context():
         db.create_all()
+        if Messages.query.first():
+            pass
+        else:
+            for i, message in enumerate(messages, start=1):
+                db.session.add(Messages(id=i, **message))
+            db.session.commit()
 
     return app
