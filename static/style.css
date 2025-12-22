@@ -143,6 +143,19 @@ body::before {
     margin-bottom: 1.2rem;
     opacity: 0.65;
     line-height: 1.6;
+    background: linear-gradient(to right, rgba(232, 234, 239, 0.65) 0%, rgba(232, 234, 239, 0.4) 60%, rgba(232, 234, 239, 0.1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+}
+
+.archived-msg:hover {
+    opacity: 0.85;
+    background: linear-gradient(to right, rgba(232, 234, 239, 0.85) 0%, rgba(232, 234, 239, 0.6) 60%, rgba(232, 234, 239, 0.3) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 .mood-uneasy {
     background: linear-gradient(135deg, #2d1215 0%, #1a0808 100%);
