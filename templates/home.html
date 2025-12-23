@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inbox from Nowhere</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body class="mood-{{ msg.tone if not exhausted else 'empty' }}">
+    <main class="container">
+      <section class="current">
+        {% if exhausted %}
+        <p class="message typewriter" data-speed="100">{{ msg_text }}</p>
+        {% else %}
+        <div class="message-wrapper">
+          <i
+            data-lucide="{% if msg.tone == 'uneasy' %}zap{% elif msg.tone == 'patient' %}timer{% elif msg.tone == 'cold' %}snowflake{% elif msg.tone == 'curious' %}sparkles{% elif msg.tone == 'resigned' %}moon{% else %}message-square{% endif %}"
+            class="mood-icon"
+          ></i>
+          <p class="message" data-tone="{{ msg.tone }}">
+            <span class="typewriter-target">{{ msg.text }}</span>
+          </p>
+        </div>
+
+        <div class="actions" id="btn-group">
+          <a href="/act/open/{{ msg.id }}">
+            <i data-lucide="mail-open"></i> open
+          </a>
+          <a href="/act/archive/{{ msg.id }}">
+            <i data-lucide="archive"></i> archive
+          </a>
+          <a href="/act/ignore/{{ msg.id }}">
+            <i data-lucide="eye-off"></i> ignore
+          </a>
+        </div>
+        {% endif %}
+      </section>
+
+      {% if archived %}
+      <aside class="archive">
+        <h4><i data-lucide="history"></i> Fragments</h4>
+        {% for a in archived %}
+        <p class="archived-msg">
+          <i data-lucide="hash"></i>
+          <span>{{ a.message.text }}</span>
+        </p>
+        {% endfor %}
+      </aside>
+      {% endif %}
+    </main>
+
+    <script>
+      lucide.createIcons();
+      const el = document.querySelector(".typewriter-target");
+
+      if (el) {
+        const text = el.innerText.trim();
+        const tone = el.closest(".message").dataset.tone;
+        el.innerText = "";
+
+        let i = 0;
+        function type() {
+          if (i < text.length) {
+            el.innerHTML += text.charAt(i++);
+            let speed =
+              tone === "patient"
+                ? 120
+                : tone === "uneasy"
+                ? Math.random() * 100 + 10
+                : 40;
+            setTimeout(type, speed);
+          } else {
+            const btns = document.getElementById("btn-group");
+            if (btns) btns.style.opacity = "1";
+            lucide.createIcons();
+          }
+        }
+        window.onload = type;
+      }
+    </script>
+  </body>
+</html>

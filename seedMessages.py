@@ -1,0 +1,73 @@
+messages = [
+    # NEUTRAL
+    {"text": "This was delivered without instructions.", "tone": "neutral", "weight": 12},
+    {"text": "There’s nothing urgent here.", "tone": "neutral", "weight": 14},
+    {"text": "You can read it now.", "tone": "neutral", "weight": 10},
+    {"text": "This message wasn’t marked important.", "tone": "neutral", "weight": 11},
+    {"text": "It arrived earlier today.", "tone": "neutral", "weight": 13},
+    {"text": "No action is required.", "tone": "neutral", "weight": 15},
+    {"text": "You’re free to leave it open.", "tone": "neutral", "weight": 9},
+    {"text": "It doesn’t explain itself.", "tone": "neutral", "weight": 8},
+    {"text": "This is all it says.", "tone": "neutral", "weight": 12},
+    {"text": "Nothing else was attached.", "tone": "neutral", "weight": 10},
+
+    # CURIOUS
+    {"text": "You’re still checking these.", "tone": "curious", "weight": 14},
+    {"text": "This one stayed unread longer than the others.", "tone": "curious", "weight": 12},
+    {"text": "You came back after a while.", "tone": "curious", "weight": 13},
+    {"text": "That wasn’t the first thing you opened.", "tone": "curious", "weight": 11},
+    {"text": "You usually hesitate here.", "tone": "curious", "weight": 10},
+    {"text": "This pattern is familiar.", "tone": "curious", "weight": 12},
+    {"text": "It feels intentional this time.", "tone": "curious", "weight": 9},
+    {"text": "You didn’t ignore this immediately.", "tone": "curious", "weight": 11},
+    {"text": "Something changed in the way you paused.", "tone": "curious", "weight": 8},
+    {"text": "You noticed this one.", "tone": "curious", "weight": 14},
+
+    # PATIENT
+    {"text": "There’s no need to rush.", "tone": "patient", "weight": 15},
+    {"text": "It can stay here.", "tone": "patient", "weight": 12},
+    {"text": "You don’t have to decide yet.", "tone": "patient", "weight": 14},
+    {"text": "This isn’t going anywhere.", "tone": "patient", "weight": 13},
+    {"text": "Take your time.", "tone": "patient", "weight": 15},
+    {"text": "You can come back later.", "tone": "patient", "weight": 12},
+    {"text": "It’s fine if you don’t open it.", "tone": "patient", "weight": 11},
+    {"text": "Waiting doesn’t bother me.", "tone": "patient", "weight": 9},
+    {"text": "This can sit quietly.", "tone": "patient", "weight": 10},
+    {"text": "I’ll remain here.", "tone": "patient", "weight": 8},
+
+    # UNEASY
+    {"text": "This feels different than before.", "tone": "uneasy", "weight": 14},
+    {"text": "I didn’t expect it to linger like this.", "tone": "uneasy", "weight": 12},
+    {"text": "Something about this timing is strange.", "tone": "uneasy", "weight": 13},
+    {"text": "It doesn’t usually go this way.", "tone": "uneasy", "weight": 11},
+    {"text": "I might be mistaken.", "tone": "uneasy", "weight": 9},
+    {"text": "This wasn’t how it happened last time.", "tone": "uneasy", "weight": 12},
+    {"text": "It feels slightly misaligned.", "tone": "uneasy", "weight": 10},
+    {"text": "That delay stands out.", "tone": "uneasy", "weight": 11},
+    {"text": "I thought this would resolve itself.", "tone": "uneasy", "weight": 13},
+    {"text": "There’s a quiet tension here.", "tone": "uneasy", "weight": 14},
+
+    # COLD
+    {"text": "It doesn’t matter anymore.", "tone": "cold", "weight": 14},
+    {"text": "You don’t need to respond.", "tone": "cold", "weight": 13},
+    {"text": "This was optional.", "tone": "cold", "weight": 12},
+    {"text": "There’s nothing to clarify.", "tone": "cold", "weight": 11},
+    {"text": "I won’t repeat this.", "tone": "cold", "weight": 10},
+    {"text": "It’s fine if you ignore it.", "tone": "cold", "weight": 14},
+    {"text": "No explanation is necessary.", "tone": "cold", "weight": 12},
+    {"text": "You don’t owe anything here.", "tone": "cold", "weight": 13},
+    {"text": "This can be left unfinished.", "tone": "cold", "weight": 11},
+    {"text": "It’s not important.", "tone": "cold", "weight": 15},
+
+    # RESIGNED
+    {"text": "I don’t think these are helping.", "tone": "resigned", "weight": 13},
+    {"text": "This was probably unnecessary.", "tone": "resigned", "weight": 14},
+    {"text": "You seem done with this.", "tone": "resigned", "weight": 12},
+    {"text": "I’ll stop expecting a response.", "tone": "resigned", "weight": 15},
+    {"text": "This might be the last one.", "tone": "resigned", "weight": 10},
+    {"text": "I don’t want to bother you.", "tone": "resigned", "weight": 14},
+    {"text": "It’s okay if this fades.", "tone": "resigned", "weight": 13},
+    {"text": "I tried to be clear.", "tone": "resigned", "weight": 9},
+    {"text": "There’s nothing left to add.", "tone": "resigned", "weight": 11},
+    {"text": "I’ll let this rest.", "tone": "resigned", "weight": 15},
+]
